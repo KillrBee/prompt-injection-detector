@@ -1,6 +1,6 @@
 # Prompt Injection Detection System
 
-A high-performance machine learning system for detecting prompt injection attacks against LLMs.
+A high-performance machine learning system for detecting prompt injection attacks against agentic frameworks like OpenClaw and LLMs.
 
 ## Overview
 
