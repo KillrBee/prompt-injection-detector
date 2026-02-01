@@ -1,0 +1,35 @@
+# Configuration for Prompt Injection Detector
+
+paths:
+  data_dir: ./data
+  model_dir: ./data/models
+  log_dir: ./logs
+
+features:
+  embedding_model: all-mpnet-base-v2  # Options: all-mpnet-base-v2, all-MiniLM-L6-v2
+  use_bert_features: false  # Set to true for better accuracy (slower)
+
+models:
+  xgboost:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.05
+    subsample: 0.8
+    colsample_bytree: 0.8
+  
+  lightgbm:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.05
+    num_leaves: 31
+    subsample: 0.8
+    colsample_bytree: 0.8
+
+training:
+  test_size: 0.15
+  val_size: 0.15
+  random_state: 42
+  
+inference:
+  threshold: 0.5  # Classification threshold
+  batch_size: 32
